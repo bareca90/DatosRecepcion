@@ -148,17 +148,17 @@
                         echo"<th class='ancho_celdas_normales'> Rendimiento </th>"; //11
                         echo"<th class='ancho_celdas_normales'> Cal.Est. Cab.</th>"; //12
                         echo"<th class='ancho_celdas_normales'>  </th>"; //13
-                        echo"<th class='ancho_celdas_normales'> T. Tratamiento </th>"; //14
-                        echo"<th class='ancho_celdas_normales'> T. Max Trat. Ini. </th>"; //15
-                        echo"<th class='ancho_celdas_normales'> T. Max Trat. Fin. </th>"; // 16 +
+                        echo"<th class='ancho_celdas_normales'> H. Tratamiento </th>"; //14
+                        echo"<th class='ancho_celdas_normales'> H. Max Trat. Ini. </th>"; //15
+                        echo"<th class='ancho_celdas_normales'> H. Max Trat. Fin. </th>"; // 16 +
                         echo"<th class='ancho_celdas_barra'> </th>"; //17
                         echo"<th class='ancho_celdas_normales'>  </th>"; //18
                         echo"<th class='ancho_celdas_normales'> Val. Máx. Sulf. </th>"; //19 +
                         echo"<th class='ancho_celdas_normales'> Prom. Resid. </th>"; //20
                         //echo"<th class='ancho_celdas_normales'> T. Pesca Planta</th>";
-                        echo"<th class='ancho_celdas_normales'> T. Esp. Recepciòn </th>"; //21
+                        echo"<th class='ancho_celdas_normales'> H. Esp. Recepciòn </th>"; //21
                         echo"<th class='ancho_celdas_barra'>    </th>"; //22
-                        echo"<th class='ancho_celdas_normales'> T. Tot. Espera </th>"; //23
+                        echo"<th class='ancho_celdas_normales'> H. Tot. Espera </th>"; //23
                         
                     echo"</tr>";
                 echo"</thead>";
@@ -321,16 +321,16 @@
                         echo"<th class='ancho_celdas_normales'> Flácido </th>";
                         echo"<th class='ancho_celdas_normales'> Rendimiento </th>";
                         echo"<th class='ancho_celdas_normales'>  </th>";
-                        echo"<th class='ancho_celdas_normales'> T. Tratamiento </th>";
-                        echo"<th class='ancho_celdas_normales'> T. Max Trat. Ini. </th>";
-                        echo"<th class='ancho_celdas_normales'> T. Max Trat. Fin. </th>";
+                        echo"<th class='ancho_celdas_normales'> h. Tratamiento </th>";
+                        echo"<th class='ancho_celdas_normales'> h. Max Trat. Ini. </th>";
+                        echo"<th class='ancho_celdas_normales'> h. Max Trat. Fin. </th>";
                         echo"<th class='ancho_celdas_barra'> </th>";
                         echo"<th class='ancho_celdas_normales'> Val. Máx. Sulf. </th>"; 
                         echo"<th class='ancho_celdas_normales'> Prom. Resid. </th>";
                         //echo"<th class='ancho_celdas_normales'> T. Pesca Planta</th>";
-                        echo"<th class='ancho_celdas_normales'> T. Esp. Recepciòn </th>";
+                        echo"<th class='ancho_celdas_normales'> h. Esp. Recepciòn </th>";
                         echo"<th class='ancho_celdas_barra'>    </th>";
-                        echo"<th class='ancho_celdas_normales'> T. Tot. Espera </th>";
+                        echo"<th class='ancho_celdas_normales'> h. Tot. Espera </th>";
                         
                     echo"</tr>";
                 echo"</thead>";
