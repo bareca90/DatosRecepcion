@@ -121,7 +121,8 @@
                             Else
                                 ''
                         End 'TiempoFinalTrat'                                                             ,
-                        [valor máximo de sulfitos] 'ValMaxSulf'
+                        [valor máximo de sulfitos] 'ValMaxSulf'                                           ,
+                        BranquiasCocido
 
                         
                 From Vsp_DatosRecepcion 
@@ -148,6 +149,7 @@
                         echo"<th class='ancho_celdas_normales'> Rendimiento </th>"; //11
                         echo"<th class='ancho_celdas_normales'> Cal.Est. Cab.</th>"; //12
                         echo"<th class='ancho_celdas_normales'>  </th>"; //13
+                        echo"<th class='ancho_celdas_normales'> Br. Coc. </th>"; //14
                         echo"<th class='ancho_celdas_normales'> H. Tratamiento </th>"; //14
                         echo"<th class='ancho_celdas_normales'> H. Max Trat. Ini. </th>"; //15
                         echo"<th class='ancho_celdas_normales'> H. Max Trat. Fin. </th>"; // 16 +
@@ -185,7 +187,7 @@
                             }else{
                                 echo"<td>".$mostrar['EstadoAnalisis']."</td>";                                        
                             }
-                            
+                            echo"<td>".number_format($mostrar['BranquiasCocido'],1)."</td>";  //11                                      
                             echo"<td>".$mostrar['TiempoTratamiento']."</td>"; //15
                             echo"<td>".$mostrar['TiempoFinalTrat']."</td>"; //16
                             echo"<td>".$mostrar['TiempoMax']."</td>"; //17
@@ -321,6 +323,7 @@
                         echo"<th class='ancho_celdas_normales'> Flácido </th>";
                         echo"<th class='ancho_celdas_normales'> Rendimiento </th>";
                         echo"<th class='ancho_celdas_normales'>  </th>";
+                        echo"<th class='ancho_celdas_normales'> Br. Coc. </th>"; //14
                         echo"<th class='ancho_celdas_normales'> h. Tratamiento </th>";
                         echo"<th class='ancho_celdas_normales'> h. Max Trat. Ini. </th>";
                         echo"<th class='ancho_celdas_normales'> h. Max Trat. Fin. </th>";
