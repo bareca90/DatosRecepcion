@@ -40,7 +40,13 @@
                             Else	'Noche'
                         End	 'Turno'		                                             ,
                         (
-                            Select Sum(Kilos)  From Vsp_DatosRecepcion Where Tipo	='Saldo' And Proceso = 'CC X CC' And TipoProceso =   'P'
+                            Select IsNull(Sum(Kilos),0)  From Vsp_DatosRecepcion Where Tipo	='Saldo' And Proceso = 'CC X CC' And TipoProceso =   'P' and EstadoAnalisis = 'P'
+                        ) 'TotKilosAnalizar'       ,
+                         (
+                            Select IsNull(Sum(Kilos),0)  From Vsp_DatosRecepcion Where Tipo	='Saldo' And Proceso = 'CC X CC' And TipoProceso =   'P' and EstadoAnalisis <> 'P'
+                        ) 'TotKilosDisponibles'     ,
+                        (
+                            Select IsNull(Sum(Kilos),0)  From Vsp_DatosRecepcion Where Tipo	='Saldo' And Proceso = 'CC X CC' And TipoProceso =   'P'
                         ) 'TotKilos'                                                     ,
                         Right('00' + Ltrim(Rtrim(Day(GetDate()))),2) + ' de '	+	Case Month(GetDate())
 																						When 1	Then 'Enero'
@@ -67,6 +73,8 @@
                     $aguaje=$muestra['Aguaje'];
                     $turno=$muestra['Turno'];
                     $totKilos=$muestra['TotKilos'];
+                    $totKilosDisponibles=$muestra['TotKilosDisponibles'];
+                    $totKilosAnalizar=$muestra['TotKilosAnalizar'];
                     $fechaactual=$muestra['FechaActual'];
                 }
             ?>
@@ -119,6 +127,26 @@
             </div>
             
             
+            <div class="kpi-card red">
+                <span class="card-value">KG x Analizar</span>
+                <span class="card-text">
+                    <?php 
+                        echo number_format($totKilosAnalizar,2); 
+                    ?>
+                </span>
+                <i class="fas fa-balance-scale icon"></i>
+                
+            </div>
+            <div class="kpi-card red">
+                <span class="card-value">KG Disponibles</span>
+                <span class="card-text">
+                    <?php 
+                        echo number_format($totKilosDisponibles,2); 
+                    ?>
+                </span>
+                <i class="fas fa-shrimp icon"></i>
+                
+            </div>
             <div class="kpi-card red">
                 <span class="card-value">Total KG</span>
                 <span class="card-text">
