@@ -163,17 +163,17 @@
                         echo"<th class='ancho_celdas_normales'> Cal.Est. Cab.</th>"; //12
                         echo"<th class='ancho_celdas_normales'>  </th>"; //13
                         echo"<th class='ancho_celdas_normales'> Br. Coc. </th>"; //14
-                        echo"<th class='ancho_celdas_normales'> H. Tratamiento </th>"; //14
-                        echo"<th class='ancho_celdas_normales'> H. Max Trat. Ini. </th>"; //15
-                        echo"<th class='ancho_celdas_normales'> H. Max Trat. Fin. </th>"; // 16 +
-                        echo"<th class='ancho_celdas_barra'> </th>"; //17
-                        echo"<th class='ancho_celdas_normales'>  </th>"; //18
-                        echo"<th class='ancho_celdas_normales'> Val. Máx. Sulf. </th>"; //19 +
-                        echo"<th class='ancho_celdas_normales'> Prom. Resid. </th>"; //20
+                        echo"<th class='ancho_celdas_normales'> H. Tratamiento </th>"; //15
+                        echo"<th class='ancho_celdas_normales'> H. Max Trat. Ini. </th>"; //16
+                        echo"<th class='ancho_celdas_normales'> H. Max Trat. Fin. </th>"; // 17 +
+                        echo"<th class='ancho_celdas_barra'> </th>"; //18
+                        echo"<th class='ancho_celdas_normales'>  </th>"; //19
+                        echo"<th class='ancho_celdas_normales'> Val. Máx. Sulf. </th>"; //20 +
+                        echo"<th class='ancho_celdas_normales'> Prom. Resid. </th>"; //21
                         //echo"<th class='ancho_celdas_normales'> T. Pesca Planta</th>";
-                        echo"<th class='ancho_celdas_normales'> H. Esp. Recepciòn </th>"; //21
-                        echo"<th class='ancho_celdas_barra'>    </th>"; //22
-                        echo"<th class='ancho_celdas_normales'> H. Tot. Espera </th>"; //23
+                        echo"<th class='ancho_celdas_normales'> H. Esp. Recepciòn </th>"; //22
+                        echo"<th class='ancho_celdas_barra'>    </th>"; //23
+                        echo"<th class='ancho_celdas_normales'> H. Tot. Espera </th>"; //24
                         
                     echo"</tr>";
                 echo"</thead>";
@@ -192,15 +192,15 @@
                             echo"<td>".number_format($mostrar['Flacido'],2)."</td>";      //10
                             echo"<td>".number_format($mostrar['Rendimiento'],2)."</td>";  //11                                      
                             echo"<td>".$mostrar['CalidadCabezas']."</td>";     //12                                   
-                            $estadoAnalisis =   $mostrar['EstadoAnalisis']; //13
-                            $hayEscurrido=$mostrar['HayEscurrido']; //14
+                            $estadoAnalisis =   $mostrar['EstadoAnalisis']; 
+                            $hayEscurrido=$mostrar['HayEscurrido']; //13
                             if($estadoAnalisis=='S'){
                                 echo"<td><i class='fas fa-info-circle'></i></td>";              
                                                       
                             }else{
                                 echo"<td>".$mostrar['EstadoAnalisis']."</td>";                                        
                             }
-                            echo"<td>".number_format($mostrar['BranquiasCocido'],1)."</td>";  //11                                      
+                            echo"<td>".number_format($mostrar['BranquiasCocido'],1)."</td>";  //14                                      
                             echo"<td>".$mostrar['TiempoTratamiento']."</td>"; //15
                             echo"<td>".$mostrar['TiempoFinalTrat']."</td>"; //16
                             echo"<td>".$mostrar['TiempoMax']."</td>"; //17

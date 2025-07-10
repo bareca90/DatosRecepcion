@@ -62,7 +62,28 @@
 																						When 11	Then 'Noviembre'
 																						When 12	Then 'Diciembre'
 																					End  
-																				+ ' del '+ Convert(Character(4),Year(GetDate()))		'FechaActual'
+																				+ ' del '+ Convert(Character(4),Year(GetDate()))		'FechaActual',
+                        (
+                            Select  Sum(Kilos) 
+                            From	Vsp_DatosRecepcion
+                            Where	Tipo		=	'Despacho' 
+                            And		Proceso		=	'CC X CC' 
+                            And		TipoProceso =	'P'
+                            And		Try_Convert(DateTime, FechaAbastecimiento + ' ' + HoraAbastecimientoDesde, 103) Is Not Null
+                            And		Try_Convert(DateTime, FechaAbastecimiento + ' ' + HoraAbastecimientoDesde, 103) 
+                            Between	Case 
+                                        When DatePart(Hour, GetDate()) Between 8 And 18 
+                                            Then	DateAdd(Hour, 8, Cast(Cast(GetDate() As Date) As DateTime))
+                                        Else
+                                            DateAdd(Hour, 19, Cast(Cast(GetDate() As Date) As DateTime))
+                                    End
+                            And		Case
+                                        When DatePart(Hour, GetDate()) Between 8 And 18 
+                                            Then	DateAdd(Hour, 18, DateAdd(Minute, 59, Cast(Cast(GetDate() As Date) As DateTime)))
+                                        Else
+                                            DateAdd(Hour, 7, DateAdd(Minute, 59, Cast(DateAdd(Day, 1, Cast(GetDate() As Date)) As DateTime)))
+                                    End
+                        ) 'KilosDespacho'
                         
 
                         From	PRPYAQ	With(NoLock)
@@ -76,6 +97,7 @@
                     $totKilosDisponibles=$muestra['TotKilosDisponibles'];
                     $totKilosAnalizar=$muestra['TotKilosAnalizar'];
                     $fechaactual=$muestra['FechaActual'];
+                    $kilosDespacho=$muestra['KilosDespacho'];
                 }
             ?>
             <div class="kpi-card orange">
@@ -126,7 +148,16 @@
                 <i class="fas fa-clock icon"></i>
             </div>
             
-            
+            <div class="kpi-card red">
+                <span class="card-value">KG Procesados</span>
+                <span class="card-text">
+                    <?php 
+                        echo number_format($kilosDespacho,2); 
+                    ?>
+                </span>
+                <i class="fas fa-industry icon"></i>
+                
+            </div>
             <div class="kpi-card red">
                 <span class="card-value">KG x Analizar</span>
                 <span class="card-text">
