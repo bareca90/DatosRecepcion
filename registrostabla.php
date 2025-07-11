@@ -77,8 +77,8 @@
                         Flacido                                                                         ,
                         TiempoTratamiento                                                               ,
                         Case 
-                            When [Fecha maxima Tratamiento Inicial] <>''
-                                Then Convert(Char(5),Cast([Fecha maxima Tratamiento Inicial] As Time)) 
+                            When [Fecha maxima Tratamiento Final] <>''
+                                Then Convert(Char(5),Cast([Fecha maxima Tratamiento Final] As Time)) 
                             Else
                                 ''
                         End 'TiempoMax'                                                                 ,
@@ -129,8 +129,8 @@
                         [Calidad Estado Cabezas] 'CalidadCabezas'                                         ,
                         [Trat. Cumplido] 'TratCumplido'                                                   ,
                          Case 
-                            When [Tiempo Interrupcion Tratamiento Final]  <>''
-                                Then Convert(Char(5),Cast([Tiempo Interrupcion Tratamiento Final]  As Time)) 
+                            When [Fecha maxima Tratamiento Inicial]  <>''
+                                Then Convert(Char(5),Cast([Fecha maxima Tratamiento Inicial]  As Time)) 
                             Else
                                 ''
                         End 'TiempoFinalTrat'                                                             ,
